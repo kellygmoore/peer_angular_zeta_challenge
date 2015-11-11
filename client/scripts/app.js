@@ -1,8 +1,9 @@
 var myApp = angular.module("myApp", []);
 
-myApp.controller('showZeta', ["$scope", '$http', function($scope, $http){
-    $scope.info = {};
+myApp.controller('showZeta', ["$scope", '$http', '$filter', function($scope, $http, $filter){
 
+    var orderBy = $filter('orderBy');
+    $scope.info = {};
     $scope.zetaArray = [];
 
     //GET
@@ -10,6 +11,11 @@ myApp.controller('showZeta', ["$scope", '$http', function($scope, $http){
         $http.get('/people').then(function(response){
             $scope.zetaArray = response.data;
         });
+    };
+
+        //SORT BY
+    $scope.order = function(predicate, reverse) {
+        $scope.zetaArray = orderBy($scope.zetaArray, predicate, reverse);
     };
 
 $scope.getZetas();

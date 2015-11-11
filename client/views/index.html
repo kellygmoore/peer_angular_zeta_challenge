@@ -18,6 +18,11 @@
 
     <div ng-controller="showZeta">
         <h2>Meet your Zeta Cohort</h2>
+
+        <button ng-click="reverse=false;order('name', false)">Sort By Name</button>
+        <button ng-click="reverse=false;order('location', false)">Sort By Location</button>
+        <button ng-click="reverse=false;order('favenumber', false)">Sort By Favorite Number</button>
+        <hr>
         <div ng-repeat="student in zetaArray">
             <zeta-info info="student"></zeta-info>
         </div>
