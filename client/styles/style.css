@@ -6,12 +6,22 @@ h2 {
     color: white;
 }
 
+#searchForName {
+    color: white;
+    margin-left: 15px;
+}
+
+input {
+    color: black;
+}
+
 button {
     background-color: red;
     color: white;
     border: 1px dashed gold;
     border-radius: 10px;
     margin-left: 15px;
+    margin-top: 10px;
 }
 
 .zetakids {
